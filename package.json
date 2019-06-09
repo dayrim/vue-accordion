@@ -5,13 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
-  },
-  "devDependencies": {
+    "vue": "^2.6.10",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
@@ -22,6 +21,10 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "engines": {
+    "node": "11.2.0",
+    "npm": "6.4.1"
   },
   "eslintConfig": {
     "root": true,

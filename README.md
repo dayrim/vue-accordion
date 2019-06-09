@@ -6,7 +6,7 @@ Visit https://vue-accordion.herokuapp.com/ to see the app online.
 
 - Install node https://nodejs.org/en/.
 - *Optionaly Install yarn https://yarnpkg.com/en/
-- Download project or run `git clone https://github.com/dayrim/vue-creatives.gitt` to clone project.
+- Download project or run `git clone https://github.com/dayrim/vue-accordion.git` to clone project.
 - Go to project root
 
 ## Project commands

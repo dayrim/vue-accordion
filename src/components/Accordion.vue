@@ -6,7 +6,17 @@
 
 <script>
 export default {
-  name: "accordion"
+  name: "accordion",
+  data: function() {
+    return {
+      allowOpen: true
+    };
+  },
+  mounted: function() {
+    this.$on("itemShownChanged", value => {
+      this.allowOpen = !value;
+    });
+  }
 };
 </script>
 

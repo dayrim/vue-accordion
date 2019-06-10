@@ -1,6 +1,6 @@
 <template>
   <div class="accordion-item">
-    <div class="accordion-item-header" @click="isShown = !isShown">
+    <div class="accordion-item-header" @click="toggleVisibility()">
       <slot name="header"></slot>
       <i class="arrow" :class="{ closed: isShown }"></i>
     </div>
@@ -20,6 +20,9 @@ export default {
   computed: {
     slotPassed() {
       return !!this.$slots.default;
+    },
+    allowOpen() {
+      return !!this.$parent.allowOpen;
     }
   },
   data: function() {
@@ -27,7 +30,19 @@ export default {
       isShown: false
     };
   },
+  watch: {
+    isShown(value) {
+      this.$parent.$emit("itemShownChanged", value);
+    }
+  },
   methods: {
+    toggleVisibility() {
+      if (!this.isShown && this.allowOpen) {
+        this.isShown = true;
+      } else if (this.isShown) {
+        this.isShown = false;
+      }
+    },
     enter(element) {
       const { height } = getComputedStyle(element);
 
